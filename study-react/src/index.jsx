@@ -1,12 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import This from './components/This'
-import IfElse from './components/IfElse'
+import RenderComponent from './components/RenderComponent'
 
 ReactDOM.render(
     <React.StrictMode>
-        <This/>
-        <IfElse/>
+       <RenderComponent/>
     </React.StrictMode>,
     document.getElementById('container')
 );

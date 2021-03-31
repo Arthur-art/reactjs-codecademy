@@ -25,7 +25,7 @@ export default class IfElse extends React.Component {
     const MathCalc = Math.random() < 0.5;
     let message;
     if(MathCalc){
-      message = <h2>Eu amo matematica</h2>
+      message = <h2>Eu amo Matematica</h2>
     }else{
       message = <h2>Eu amo React</h2>
     }
