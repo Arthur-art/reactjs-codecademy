@@ -1,15 +1,16 @@
 import React from "react";
-/*propsé o nome do objeto que armazena as informações transmitidas. 
+/*props é o nome do objeto que armazena as informações transmitidas. 
 this.propsrefere-se a esse objeto de armazenamento. Ao mesmo tempo, 
 cada informação transmitida é chamada de suporte. Isso significa que propspode se referir 
 a duas informações transmitidas ou ao objeto que armazena essas informações */
 
-export default class PropsComponent extends React.Component {
+class PropsComponent extends React.Component {
   render() {
      //this.props é um objeto de um component
     const myProps = JSON.stringify(this.props);
     //destructuring
-    let {age} = this.props; 
+    let {age} = this.props;
+
     return (
       <div>
         <h1>CHECK OUT MY PROPS OBJECT</h1>
@@ -17,6 +18,36 @@ export default class PropsComponent extends React.Component {
         <h2>{this.props.firstName}</h2>
         <h2>{this.props.secondName}</h2>
         <h2>Idade {age}</h2>
+      </div>
+    );
+  }
+}
+
+
+//usando props para passar em condicoes
+export default class PropsComponentIf extends React.Component {
+  render() {
+
+    let title;
+    let login;
+    if(this.props.name === "React"){
+        title = <h1>Estudando React</h1>
+    }
+
+    if(this.props.name === "JavaScript"){
+        title = <h1>Estudando JavaScript</h1>
+    }
+
+    if(this.props.userlogged === false){
+        login= "Voce esta offline"
+    }else{
+        login= "Voce esta online"
+    }
+
+    return (
+      <div>
+        {title}
+    <h2>{login}</h2>
       </div>
     );
   }
