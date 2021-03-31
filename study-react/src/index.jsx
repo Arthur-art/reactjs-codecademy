@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import RenderComponent from './components/RenderComponent'
+import PropsComponent from './components/PropsComponent'
 ReactDOM.render(
     <React.StrictMode>
-      <RenderComponent/>
+        <PropsComponent firstName="Arthur" secondName="Teixeira" age={24}/>
     </React.StrictMode>,
     document.getElementById('container')
 );

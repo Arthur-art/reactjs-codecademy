@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import IfElse from './IfElse'
 import NavBar from './NavBar'
 //components reenderizando outros components
@@ -14,5 +13,3 @@ export default class RenderComponent extends React.Component{
         )
     }
 }
-
-ReactDOM.render(<RenderComponent/>, document.getElementById('container'))
