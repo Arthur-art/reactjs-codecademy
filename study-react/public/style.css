@@ -1,0 +1,13 @@
+img {
+  height: 30rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: #30363d;
+}
+
+li {
+  font-size: 2rem;
+}
