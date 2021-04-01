@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import SetState from './components/State'
+import Clock from './components/Clock'
+
 
 ReactDOM.render(
     <React.StrictMode>
-         <SetState />
+        <Clock/>
     </React.StrictMode>,
     document.getElementById('container')
 );
