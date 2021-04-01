@@ -5,7 +5,15 @@ img {
 body {
   display: flex;
   justify-content: center;
-  background: #30363d;
+  text-align: center;
+  background: lightgray;
+}
+
+button {
+  border: none;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 2rem;
 }
 
 li {

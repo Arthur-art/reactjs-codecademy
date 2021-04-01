@@ -4,8 +4,7 @@ import SetState from './components/State'
 
 ReactDOM.render(
     <React.StrictMode>
-        <h1>React</h1>
-        <SetState />
+         <SetState />
     </React.StrictMode>,
     document.getElementById('container')
 );
