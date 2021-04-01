@@ -45,8 +45,8 @@ export default class PropsComponentIf extends React.Component {
     } else {
       login = "Voce esta online";
     }
-
-    const props = JSON.stringify(this.props);
+    let propsChildren = JSON.stringify(this.props.children);
+    const props = ()=>console.log(propsChildren);
 
     return (
       <div>

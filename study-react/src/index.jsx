@@ -4,7 +4,7 @@ import PropsComponent from './components/PropsComponent'
 
 ReactDOM.render(
     <React.StrictMode>
-        <PropsComponent name="JavaScript" userlogged={true}/>
+        <PropsComponent name="React" userlogged={true}>Hello World</PropsComponent>
     </React.StrictMode>,
     document.getElementById('container')
 );
