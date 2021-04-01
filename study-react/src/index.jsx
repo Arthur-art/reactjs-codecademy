@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import State from './components/State'
+import SetState from './components/State'
 
 ReactDOM.render(
     <React.StrictMode>
         <h1>React</h1>
-        <State />
+        <SetState />
     </React.StrictMode>,
     document.getElementById('container')
 );
