@@ -5,7 +5,7 @@ export default class Button extends React.Component{
         return (
             <div>
                 <button onClick={this.props.talk}>Talk</button>
-               <button onClick={this.props.propsComponent}>PropsComponentChildren</button>
+               <button onClick={this.props.propsComponent}>console.log(PropsComponentChildren)</button>
             </div>
         )
     }

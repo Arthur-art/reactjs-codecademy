@@ -4,7 +4,6 @@ import Button from "./Button";
 this.propsrefere-se a esse objeto de armazenamento. Ao mesmo tempo, 
 cada informação transmitida é chamada de suporte. Isso significa que propspode se referir 
 a duas informações transmitidas ou ao objeto que armazena essas informações */
-
 class PropsComponent extends React.Component {
   render() {
     //this.props é um objeto de um component
@@ -25,7 +24,7 @@ class PropsComponent extends React.Component {
 }
 
 //usando props para passar em condicoes
-export default class PropsComponentIf extends React.Component {
+class PropsComponentIf extends React.Component {
   talk() {
     alert("Talk");
   }
@@ -46,13 +45,38 @@ export default class PropsComponentIf extends React.Component {
       login = "Voce esta online";
     }
     let propsChildren = JSON.stringify(this.props.children);
-    const props = ()=>console.log(propsChildren);
+    const props = () => console.log(propsChildren);
 
     return (
       <div>
         {title}
         <h2>{login}</h2>
         <Button talk={this.talk} propsComponent={props} />
+      </div>
+    );
+  }
+}
+
+export default class DefaultProps extends React.Component {
+  /*
+    Se ninguém passar nenhum text para DefaultProps , DefaultProps o display ficará em branco. 
+    Seria melhor se DefaultProps pudesse exibir uma mensagem padrão.
+
+    Você pode fazer isso acontecer fornecendo à sua classe de componente uma propriedade chamada defaultProps:
+
+    DefaultProps.defaultProps = {text:"Nenhum texto foi passado"}
+
+    ReactDOM.render(
+  <DefaultProps />, 
+  document.getElementById('app')
+);
+
+  */
+
+  render() {
+    return (
+      <div>
+        <h1>{this.props.text}</h1>
       </div>
     );
   }

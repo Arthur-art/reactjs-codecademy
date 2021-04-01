@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropsComponent from './components/PropsComponent'
+import DefaultProps from './components/PropsComponent'
+
+DefaultProps.defaultProps = {text:"Nenhum texto foi passado"}
 
 ReactDOM.render(
     <React.StrictMode>
-        <PropsComponent name="React" userlogged={true}>Hello World</PropsComponent>
+        <DefaultProps name="React" text="Texto" userlogged={true}>Hello World</DefaultProps>
     </React.StrictMode>,
     document.getElementById('container')
 );
