@@ -31,6 +31,7 @@ export default class LoginContact extends React.Component{
     const form = (
       <form action="#" onSubmit={this.check}>
         <h1>Digite a senha</h1>
+        <small>(123456)</small><br/><br/>
         <input type="password"/><br/>
         <button type="submit">Abrir</button>
       </form>
