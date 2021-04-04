@@ -12,8 +12,10 @@ body {
 button {
   border: none;
   width: 10rem;
-  height: 5rem;
+  height: 2rem;
   border-radius: 2rem;
+  background: gray;
+  margin-top: 1rem;
 }
 
 li {
