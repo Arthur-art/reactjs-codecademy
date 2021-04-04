@@ -10,14 +10,21 @@ body {
 }
 
 button {
-  border: none;
+  border: solid black 0.1rem;
   width: 10rem;
   height: 2rem;
   border-radius: 2rem;
-  background: gray;
+  background: white;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 li {
   font-size: 2rem;
+}
+
+#color {
+  border: solid black 0.1rem;
+  width: 40rem;
+  height: 10rem;
 }

@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LoginContact from './components/LoginContact'
+import RandomColors from './components/RandomColors'
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <LoginContact/>
+        <RandomColors/>
     </React.StrictMode>,
     document.getElementById('container')
 );
