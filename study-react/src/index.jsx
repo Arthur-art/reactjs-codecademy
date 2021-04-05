@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import RandomColors from './components/RandomColors'
+import App from './components/Exercises/SocialNetwork/App';
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <RandomColors/>
+        <App />
     </React.StrictMode>,
     document.getElementById('container')
 );
