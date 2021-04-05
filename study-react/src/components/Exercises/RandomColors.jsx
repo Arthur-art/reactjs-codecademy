@@ -23,7 +23,7 @@ export default class RandomColors extends React.Component{
     componentDidUpdate(prevProps, prevState) {
         this.applyColor();
       }
-    //formatando o this.state.color para 'rgb(x,y,z)'
+    //retornando o this.state.color para 'rgb(x,y,z)'
     applyColor(){
         const color = this.formatColor(this.state.color);
         return color;
