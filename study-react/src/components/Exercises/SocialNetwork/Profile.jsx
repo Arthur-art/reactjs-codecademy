@@ -1,6 +1,6 @@
 import React from 'react';
-import { fetchUserData, cancelFetch } from './DataFetcher';
-import { Userlist } from './UserList';
+import { fetchUserData, cancelFetch } from './dataFetcher';
+import { UserList } from './UserList';
 
 export class Profile extends React.Component {
   //Armazenando dados
@@ -12,7 +12,7 @@ export class Profile extends React.Component {
   }
   //Carregando dados, define o userData como null enquanto os dados estao sendo atualizados
   loadUserData(){
-    this.fetchUserData(this.props.username, (userData)=>{
+    fetchUserData(this.props.username, (userData)=>{
       this.setState({
         userData
       })
@@ -38,7 +38,7 @@ export class Profile extends React.Component {
           <h3>@{this.props.username}</h3>
           <p>Bio goes here</p>
           <h3>My friends</h3>
-          <Userlist usernames={[]} onChoose={this.props.onChoose} />
+          <UserList usernames={[]} onChoose={this.props.onChoose} />
         </div>
       </div>
     );

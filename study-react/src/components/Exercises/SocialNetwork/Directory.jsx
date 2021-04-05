@@ -1,11 +1,11 @@
 import React from 'react';
-import { Userlist } from './UserList';
+import { UserList } from './UserList';
 
 export function Directory(props) {
   return (
     <div className="Directory">
       <h2>User directory</h2>
-      <Userlist
+      <UserList
         usernames={['dog', 'cat', 'komodo']}
         onChoose={props.onChoose}
       />

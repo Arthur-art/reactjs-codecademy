@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Userlist extends React.Component {
+export class UserList extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
