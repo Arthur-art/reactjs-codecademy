@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {UpdateFunction} from './components/LearningHooks/UpdateFunctionComponentState'
+import {QuizNavaBar} from './components/LearningHooks/QuizNavBar'
 
 ReactDOM.render(
     <React.StrictMode>
-        <UpdateFunction/>
+       <QuizNavaBar/>
     </React.StrictMode>,
     document.getElementById('app')
 );
