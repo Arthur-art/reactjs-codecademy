@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export const QuizNavaBar=({questions})=>{
+export const QuizNavaBar=()=>{
 /*
    const [num, setNum] = useState(0);
    const increment = ()=> setNum(num => num+=1)
