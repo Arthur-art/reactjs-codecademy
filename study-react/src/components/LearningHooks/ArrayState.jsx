@@ -1,35 +1,33 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-const options = ["Calabresa", "Catupiry", " a Moda", "4 queijos"];
+const options = ['calabresa', 'sorvete', 'quatro queijos', 'moda']
 
-export const ArrayState = () => {
-  const [sabor, setSabor] = useState([]);
+export const ArrayState = ()=>{
 
-  const selectSabores = ({ target }) => {
-    const valueSabores = target.value;
-    setSabor((sabor)=>{
-        if(sabor.includes(valueSabores)){
-            return sabor.filter((value)=>{
-                return value !== valueSabores
-            })
-        }else{
-            return [...sabor, valueSabores]
-        }
-    })
-    
-  };
+    const [state, setState] = useState([]);
+    const setSabor = ({target})=>{
+        const option = target.value;
+        setState((state)=>{
+            if(state.includes(option)){
+                return state.filter((value)=>{
+                    return value !== option;
+                })
+            }else{
+                return [...state, option]
+            }
+        })
+    }
 
-  return (
-    <div>
-      {options.map((value) => {
-        return (
-          <button key={value} onClick={selectSabores} value={value}>
-            {sabor.includes(value) ? 'Delete ' : 'Add '}
-            {value}
-          </button>
-        );
-      })}
-      <h2>- Pizza, {sabor.join(', ')} </h2>
-    </div>
-  );
-};
+
+    return (
+        <div>
+            {options.map((value)=>{
+                return <button value={value} onClick={setSabor} key={value }>
+                {state.includes(value) ? 'Delete ' : 'Add '}
+                {value}
+                </button>
+            })}
+            <h1>- Pizza: {state.join(', ')}</h1>
+        </div>
+    )
+}
