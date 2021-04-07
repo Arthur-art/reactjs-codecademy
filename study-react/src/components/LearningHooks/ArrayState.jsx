@@ -1,34 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-const options = ["Bell Pepper", "Sausage", "Pepperoni", "Pineapple"];
+const options = ["Calabresa", "Catupiry", " a Moda", "4 queijos"];
 
-export const ArrayState = ()=>{
+export const ArrayState = () => {
+  const [sabor, setSabor] = useState([]);
 
-    const [selected, setSelected] = useState([]);
+  const selectSabores = ({ target }) => {
+    const valueSabores = target.value;
+    setSabor((sabor)=>{
+        if(sabor.includes(valueSabores)){
+            return sabor.filter((value)=>{
+                return value !== valueSabores
+            })
+        }else{
+            return [...sabor, valueSabores]
+        }
+    })
+    
+  };
 
-    const toggleTopping = ({target})=>{
-        const clickedTopping = target.value;
-
-        setSelected((prev)=>{
-            if(prev.includes(clickedTopping)){
-                // filtra a cobertura clicada para fora do estado
-                return prev.filter((value)=> value !== clickedTopping)
-            }else{
-                return [clickedTopping, ...prev]
-            }
-        })
-    }
-console.log(selected)
-
-    return (
-        <div>
-            {options.map((value)=>(
-                    <button key={value} value={value} onClick={toggleTopping}>
-                    {selected.includes(value) ? 'Delete ' : 'Add '}
-                    {value}
-                </button>
-            ))}
-            <p>- Pizza, {selected.join(", ")}</p>
-        </div>
-    )
-}
+  return (
+    <div>
+      {options.map((value) => {
+        return (
+          <button key={value} onClick={selectSabores} value={value}>
+            {sabor.includes(value) ? 'Delete ' : 'Add '}
+            {value}
+          </button>
+        );
+      })}
+      <h2>- Pizza, {sabor.join(', ')} </h2>
+    </div>
+  );
+};
