@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {ObjectsState} from './components/LearningHooks/ObjectsState'
+import AppClass from './components/Exercises/ConvertClassToFunctionHooks/ConvertClassToFunction'
 
 ReactDOM.render(
     <React.StrictMode>
-       <ObjectsState/>
+       <AppClass/>
     </React.StrictMode>,
     document.getElementById('app')
 );
