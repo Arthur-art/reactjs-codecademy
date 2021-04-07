@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {ArrayState} from './components/LearningHooks/ArrayState'
+import {ObjectsState} from './components/LearningHooks/ObjectsState'
 
 ReactDOM.render(
     <React.StrictMode>
-       <ArrayState/>
+       <ObjectsState/>
     </React.StrictMode>,
     document.getElementById('app')
 );
