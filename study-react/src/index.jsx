@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {UseEffectIntroduction} from './components/LearningHooks/useEffect/UseEffectIntroduction'
+import Counter from './components/LearningHooks/useEffect/CleaningEffects'
 ReactDOM.render(
     <React.StrictMode>
-     <UseEffectIntroduction />
+        <Counter />
     </React.StrictMode>,
     document.getElementById('app')
 );
