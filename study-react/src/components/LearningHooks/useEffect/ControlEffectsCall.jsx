@@ -1,3 +1,10 @@
+/**
+ * Ganchos de múltiplos efeitos
+useEffect()pode ser chamado mais de uma vez em um componente. 
+Isso nos dá a liberdade de configurar individualmente nossos arrays de dependência, 
+separar interesses e organizar nosso código da maneira que fizer mais sentido para nós!
+ */
+
 import React, {useState, useEffect} from 'react'
 
 export const ControlEffectsCall = ()=>{
