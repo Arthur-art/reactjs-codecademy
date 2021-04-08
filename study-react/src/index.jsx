@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {ControlEffectsCall} from './components/LearningHooks/useEffect/ControlEffectsCall'
+import Forecas from './components/Exercises/UseEffectFetchData/FetchData'
 ReactDOM.render(
     <React.StrictMode>
-        <ControlEffectsCall />
+        <Forecas />
     </React.StrictMode>,
     document.getElementById('app')
 );

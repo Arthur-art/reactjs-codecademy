@@ -1,0 +1,51 @@
+/**
+ * 1 .
+Começamos a construir um aplicativo de planejador de tempo que irá buscar dados sobre o tempo e permitir que nossos usuários escrevam algumas notas ao lado da previsão. Muito código bom já foi escrito, mas atualmente não há nada renderizando na tela.
+
+Vamos ler o código e começar a entender o que está acontecendo aqui. Que parte do nosso código achamos que está impedindo o componente de renderizar?
+
+Em nosso JSX, estamos tentando mapear uma matriz armazenada pela datavariável de estado, mas nosso efeito que busca esses dados não é chamado até depois da primeira renderização. Assim, durante o primeiro render, dados undefinede tentar chamar map()a undefinedestá causando o nosso erro!
+
+Vamos evitar esse erro verificando se os dados já foram carregados. Se não tiver, então queremos que nosso componente de função retorne apenas uma tag de parágrafo com o texto “Carregando…”. Se os dados não estiverem mais indefinidos, eles foram carregados e podemos prosseguir e renderizar o JSX completo!
+
+Ponto de verificação 2 aprovado
+
+Grudou? Veja uma dica
+
+
+
+2 .
+Nossa busca de dados está sendo feita em nosso efeito. Observe como no momento estamos apenas usando alert()mensagens para acompanhar a solicitação e o recebimento de dados de nosso servidor. Em vez de apenas sequenciar os dados de resposta e mostrá-los em uma mensagem de alerta, vamos armazenar esses dados em nosso estado.
+
+Quando os dados forem buscados, use nossa função configuradora de estado para armazenar esses dados no estado do nosso componente!
+
+PS Lembre-se de que queremos armazenar um array em nossa datavariável de estado, não o objeto de resposta inteiro.
+
+Ponto de verificação 3 aprovado
+
+Grudou? Veja uma dica
+
+
+
+3 .
+Digite em cada um dos campos de entrada das notas em nossa tabela. O que você percebe? Por que você acha que isso está acontecendo?
+
+Cada vez que digitamos em um campo de entrada, o componente é renderizado novamente para mostrar o novo valor desse campo. Mesmo que não precisemos de nenhum dado novo do back-end, nosso componente está buscando novos dados após cada renderização!
+
+Use uma matriz de dependência vazia para garantir que os dados sejam buscados apenas após a primeira renderização do nosso componente.
+
+Ponto de verificação 4 aprovado
+
+Grudou? Veja uma dica
+
+
+
+4 .
+Uau, essa pequena mudança no código fez uma grande diferença no desempenho de nosso aplicativo de planejador de clima!
+
+Vamos fazer mais uma melhoria. Você notou os botões na parte superior do nosso aplicativo? Queremos que nossos usuários possam escolher entre o planejamento em torno das previsões meteorológicas diárias e previsões meteorológicas semanais. Clicar nesses botões atualmente não muda nada. Vamos consertar isso!
+
+O servidor possui dois pontos de extremidade diferentes chamados: /dailye /hourly. Vamos usar o valor da forecastTypevariável de estado para determinar de qual ponto de extremidade nosso efeito deve solicitar dados.
+
+Depois de fazer essa alteração, nosso efeito se comporta de maneira diferente com base no valor de forecastType. Você poderia dizer que a forma como usamos nosso efeito depende disso! Adicione esta variável ao nosso array de dependência para que o efeito seja chamado novamente, atualizando-se dataapropriadamente, após renderizar novamente onde o usuário selecionou um tipo de previsão diferente.
+ */
