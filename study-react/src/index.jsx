@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Counter from './components/LearningHooks/useEffect/CleaningEffects'
+import {ControlEffectsCall} from './components/LearningHooks/useEffect/ControlEffectsCall'
 ReactDOM.render(
     <React.StrictMode>
-        <Counter />
+        <ControlEffectsCall />
     </React.StrictMode>,
     document.getElementById('app')
 );
