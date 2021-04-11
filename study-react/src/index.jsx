@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import SocialNetwork from './components/Exercises/SocialNetwork-useState/SocialNetwork'
+import Parent from './components/Stateful-Stateless/StatefulComponent'
 
 ReactDOM.render(
     <React.StrictMode>
-       <SocialNetwork />
+       <Parent />
     </React.StrictMode>,
     document.getElementById('app')
 );
