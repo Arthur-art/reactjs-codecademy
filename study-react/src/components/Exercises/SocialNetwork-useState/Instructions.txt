@@ -1,0 +1,29 @@
+1 .
+No momento, este código parece funcionar bem. Existem três solicitações de rede diferentes sendo feitas em um único efeito e muitos dados diferentes e não relacionados sendo gerenciados em uma única variável de estado. Vamos começar a trabalhar separando essas chamadas useState()e useEffect()em ganchos separados e mais simples. Isso tornará este código mais fácil de entender, desenvolver e reutilizar à medida que continuamos a melhorar nosso aplicativo!
+
+Comece a refatorar este componente:
+
+Use um gancho Estado separado para menu, newsFeed, e friends.
+Use esses novos configuradores de estado em vez de setData()no efeito.
+Simplifique nosso JSX para usar essas novas variáveis ​​de estado em vez de data.
+Ponto de verificação 2 aprovado
+
+Preso? Veja uma dica
+2 .
+Promise.all()foi útil para nós quando tínhamos todos os nossos dados agrupados em um único objeto. Ele chamou todos os serviços de back-end e, quando todos eles enviaram respostas, poderíamos chamar nossos configuradores de estado com as respostas.
+
+Como agora estamos gerenciando esses valores separadamente, podemos remover essa complexidade! Em nosso efeito, chame a get()função três vezes para as três coleções de dados diferentes que nosso componente deseja renderizar, sem usar Promise.all()mais nada.
+
+Ponto de verificação 3 aprovado
+
+Preso? Veja uma dica
+3 .
+Agora que temos três chamadas de back-end separadas, vamos continuar a separar as preocupações, dividindo cada uma delas em três Ganchos de Efeito separados!
+
+Checkpoint 4 Passed
+
+Preso? Veja uma dica
+4 .
+Cada useEffect()chamada está funcionando com uma useState()chamada correspondente . Vamos reorganizar nosso código para mostrar essa relação com mais clareza, tornando a lógica mais fácil de ler e reutilizar!
+
+Para cada uma dessas três coletas de dados, agrupe o gancho de estado relacionado e o gancho de efeito ao lado de um. Isso ajudará a deixar claro quais Ganchos estão trabalhando juntos para gerenciar cada modelo de dados separado.
