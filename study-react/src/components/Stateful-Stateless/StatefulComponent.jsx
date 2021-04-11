@@ -1,19 +1,19 @@
 import React from 'react'
-
+import {Child} from './StatelessComponent'
 //Classe de componente com estado chamada Parent.
 
 export default class Parent extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            name: 'Frarthur'
+            name: 'Arthur'
         }
     }
 
     render(){
         return (
             <div>
-                <h1>{this.state.name}</h1>
+               <Child name={this.state.name} />
             </div>
         )
     }
