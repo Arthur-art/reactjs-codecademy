@@ -8,12 +8,18 @@ export default class Parent extends React.Component{
         this.state = {
             name: 'Arthur'
         }
+        this.changeName = this.changeName.bind(this)
+    }
+    changeName(newName){
+        this.setState({
+            name: newName
+        })
     }
 
     render(){
         return (
             <div>
-               <Child name={this.state.name} />
+               <Child onChange={this.changeName} name={this.state.name} />
             </div>
         )
     }
