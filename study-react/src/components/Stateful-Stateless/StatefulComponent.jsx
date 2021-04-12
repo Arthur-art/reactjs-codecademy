@@ -6,20 +6,22 @@ export default class Parent extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            name: 'Arthur'
+            name: 'Arthur',
+            age: 24
         }
         this.changeName = this.changeName.bind(this)
     }
-    changeName(newName){
+    changeName(newName, newAge){
         this.setState({
-            name: newName
+            name: newName,
+            age: newAge
         })
     }
 
     render(){
         return (
             <div>
-               <Child onChange={this.changeName} name={this.state.name} />
+               <Child onChange={this.changeName} name={this.state.name} age={this.state.age} />
             </div>
         )
     }
