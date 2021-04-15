@@ -24,11 +24,11 @@ export const ToDoList = ()=>{
         setNewTask({})
     }
 
-    const handleDelete = (taskId)=>{
-       setAllTasks((prev)=>prev.filter((task)=>{
-           return task.id !== taskId
-       }));
-    };
+    const handleDelete=(taskId)=>{
+        setAllTasks((prev)=>prev.filter((tasks)=>{
+            return tasks.id !== taskId;
+        }))
+    }
 
     const form = (
         <form action="#" onSubmit={handleSubmit} >
@@ -38,11 +38,11 @@ export const ToDoList = ()=>{
     )
     const showTasks = (
         <Fragment>
-            {allTasks.map(({task,id},idB)=>{
+            {allTasks.map(({task,id})=>{
                return (
                <Fragment>    
                <h2 key={id}>{task}</h2>
-               <button key={idB} onClick={()=>handleDelete(id)} >Delete</button>
+               <button onClick={()=>handleDelete(id)} >Delete</button>
                </Fragment>
                )
             })}
