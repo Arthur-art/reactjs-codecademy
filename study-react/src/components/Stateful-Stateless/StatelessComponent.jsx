@@ -29,7 +29,6 @@ export class Child extends React.Component{
     render(){
         return (
             <div>
-            <h1>Hey my name is {this.props.name}, i have {this.props.age} years</h1>
             <select onChange={this.handleChange} style={style} id="great-names">
                 <option>Select a name</option>
                 <option value="Arthur">
