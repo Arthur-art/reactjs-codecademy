@@ -1,40 +1,59 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, {useState,Fragment} from 'react'
 
-export const Tarefas = () => {
+const task = [{task:'task1'},{task:'task2'},{task:'task3'}]
+
+export const ToDoList = ()=>{
 
     const [newTask, setNewTask] = useState({});
     const handleChange = ({target})=>{
-            const {name, value} = target;
-            setNewTask((prev)=>({...prev, id: Date.now(), [name]: value}));
+        const {name, value} = target;
+        setNewTask((prev)=>({
+            ...prev,
+            id:Date.now(),
+            [name]: value
+        }))
     }
-
-    const [allTasks, setAllTasks] = useState([]);
+    
+    const [allTasks, setAllTasks]=useState([]);
     const handleSubmit = (event)=>{
         event.preventDefault();
-        
-        setAllTasks((prev)=>[newTask, ...prev]);
+        setAllTasks((prev)=>([
+            ...prev,
+            newTask
+        ]))
         setNewTask({})
     }
-console.log(allTasks)
 
- return (
-     <Fragment>
-         <h1>to do list</h1>
-         <form action="#" onSubmit={handleSubmit}>
-             <input type="text" name="title" onChange={handleChange} value={newTask.title || ""}/>
-             <button type="submit">Adicionar</button>
-         </form>
-         <ul>
-             {allTasks.map(({title, id})=>{
-                return <li key={id}>
-                     <div>
-                         <h2>{title}</h2>
-                     </div>
-                 </li>
-             })}
-         </ul>
-     </Fragment>
- )
-};
+    const handleDelete = (taskId)=>{
+       setAllTasks((prev)=>prev.filter((task)=>{
+           return task.id !== taskId
+       }));
+    };
+
+    const form = (
+        <form action="#" onSubmit={handleSubmit} >
+            <input type="text" onChange={handleChange} value={newTask.task || ""}  name="task"/>
+            <button type="submit" >Adicionar</button>
+        </form>
+    )
+    const showTasks = (
+        <Fragment>
+            {allTasks.map(({task,id},idB)=>{
+               return (
+               <Fragment>    
+               <h2 key={id}>{task}</h2>
+               <button key={idB} onClick={()=>handleDelete(id)} >Delete</button>
+               </Fragment>
+               )
+            })}
+        </Fragment>
+    )
 
 
+    return (
+        <Fragment>
+            {form}
+            {showTasks}
+        </Fragment>
+    )
+}

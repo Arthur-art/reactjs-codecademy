@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Tarefas} from './components/Exercises/ToDoList/Tarefas'
+import {ToDoList} from './components/Exercises/ToDoList/Tarefas'
 
 ReactDOM.render(
   <div>
-    <Tarefas />
+    <ToDoList />
   </div>,
   document.getElementById("app")
 );
