@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {ToDoList} from './components/Exercises/ToDoList/ToDoList'
+import { Modal } from './components/Exercises/Modal/index'
 
 ReactDOM.render(
-  <div>
-    <ToDoList />
-  </div>,
+  <>
+    <Modal />
+  </>,
   document.getElementById("app")
 );
